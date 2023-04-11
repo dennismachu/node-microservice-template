@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./build",
     "build": "npm run clean && tsc",
-    "start": "node src",
-    "local": "ts-node src",
+    "start": "node ./build/api",
+    "local": "ts-node ./src/api",
     "local:watch": "nodemon src -e ts,json --exec 'npm run local'"
   },
   "repository": {
@@ -24,7 +24,10 @@
   "homepage": "https://github.com/dennismachu/node-microservice-template#readme",
   "dependencies": {
     "-": "^0.0.1",
-    "save-dev": "^0.0.1-security"
+    "@types/winston": "^2.4.4",
+    "save-dev": "^0.0.1-security",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
