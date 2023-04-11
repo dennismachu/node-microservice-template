@@ -1,0 +1,37 @@
+{
+  "name": "microservice-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./build",
+    "build": "npm run clean && tsc",
+    "start": "node src",
+    "local": "ts-node src",
+    "local:watch": "nodemon src -e ts,json --exec 'npm run local'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennismachu/node-microservice-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dennismachu/node-microservice-template/issues"
+  },
+  "homepage": "https://github.com/dennismachu/node-microservice-template#readme",
+  "dependencies": {
+    "-": "^0.0.1",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
