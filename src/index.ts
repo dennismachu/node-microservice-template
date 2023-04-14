@@ -1,18 +1,14 @@
 import http from "http";
-import AppLogger from './api/core/eventLogger';
+import AppLogger from './core/eventLogger';
+import app from "./app";
+import { connectDatabase } from "./config/database";
 let logger = new AppLogger();
 let scope = 'index.ts';
-const port = 5200
-export const server = http.createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(
-        JSON.stringify({
-            data: "It Works!",
-        })
-    );
-});
+const port = 3000
+const server = http.createServer({}, app);
 
 server.listen(port, () => {
+    connectDatabase();
     logger.logInfo(scope,`Server started on port ${port}`);  
     
 }).on("error", (e) =>
